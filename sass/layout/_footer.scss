@@ -1,0 +1,32 @@
+.footer {
+  text-align: center;
+  background-color: $color-grey-4;
+  padding: 3rem 10rem;
+
+  &__logo {
+    height: 10rem;
+    width: 13rem;
+  }
+
+  &__para {
+    font-size: 1.4rem;
+  }
+
+  &__address {
+    font-size: 1.4rem;
+    padding-top: 3rem;
+  }
+
+  &__icons {
+    &--icon {
+      padding: 3rem 0.8rem 3rem;
+      color: $color-tertiary;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateY(-0.4rem) scale(1.01);
+        cursor: pointer;
+      }
+    }
+  }
+}

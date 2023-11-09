@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem = 16px; 10px / 16px = 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+  @include respond(phone) {
+    font-size: 30%;
+  }
+
+  // Min-width for larger screens
+  @include respond(big-desktop) {
+    font-size: 65%; //min-width, so lower width first and then larger width
+  }
+  @include respond(big-desktop-2) {
+    font-size: 70%;
+  }
+}
+
+body {
+  background-color: $color-white;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: $color-tertiary;
+  color: $color-black;
+}

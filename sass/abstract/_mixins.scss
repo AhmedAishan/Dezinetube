@@ -1,0 +1,62 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  // Always the order should go from high to low, coz in media queries the  that gets applied is the last declaration
+  // EXAMPLE - the first breakpoint is phone which is 600px width and the second breakpoint is tab which is 900px width, so when the viewport width reaches 900px, which is less than 600px as well as 900px, so in this case both media queries should get applied, but the way it works is that the last declaration only gets applied, so the declaration in 900px width gets applied at 900px viewport width
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land-2 {
+    @media only screen and (max-width: 67.125em) {
+      @content;
+    } //1074px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75.43em) {
+      @content;
+    } //1207px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+  @if $breakpoint == big-desktop-2 {
+    @media only screen and (min-width: 125em) {
+      @content;
+    } //2000
+  }
+}

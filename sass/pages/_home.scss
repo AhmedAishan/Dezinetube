@@ -1,0 +1,123 @@
+.section {
+  transition: transform 1s, opacity 1s;
+  background-color: $color-white;
+  margin-top: 6rem;
+  padding: 5rem 0;
+}
+
+.section-about {
+  &__photo {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+  }
+
+  &__text-box {
+    // margin-bottom: 10rem;
+    width: 55%;
+    margin: 0 auto 3rem;
+    background-color: $color-white-2;
+    padding: 2.5rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    transition: all 0.4s ease-in;
+    border-radius: 4px;
+
+    &:hover {
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.28);
+      transform: translateY(-0.4rem) scale(1.01);
+    }
+  }
+
+  &__para {
+    color: $color-grey-1;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+  }
+}
+
+.section-work {
+  text-align: center;
+
+  &__row {
+    max-width: 114rem;
+    margin-bottom: 3rem !important;
+
+    @include respond(tab-land-2) {
+      max-width: 60rem;
+      margin-bottom: 0 !important;
+    }
+
+    @include respond(phone) {
+      max-width: 50rem;
+    }
+  }
+
+  &__box {
+    border: 0.12rem solid $color-grey-4;
+    padding: 1.5rem 1.5rem 2.5rem;
+
+    @include respond(tab-land-2) {
+      width: 100% !important;
+      margin-bottom: 2rem;
+      padding: 1rem 1rem 2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: $color-grey-1;
+    font-weight: 400;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-grey-2;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border-bottom: 1px solid transparent;
+    padding: 1rem 0 0.5rem;
+
+    &:hover {
+      color: $color-tertiary;
+      border-bottom: 1px solid $color-tertiary;
+    }
+  }
+}
+
+.section-cta {
+  font-family: "Montserrat", sans-serif;
+  background-color: $color-grey-4;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid $color-grey-4;
+
+  &__heading {
+    font-weight: 900;
+    font-size: 4rem;
+    display: block;
+    color: $color-secondary;
+    padding-bottom: 4rem;
+
+    @include respond(tab-land-2) {
+      font-size: 3.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.lazy-img {
+  filter: blur(5px);
+}

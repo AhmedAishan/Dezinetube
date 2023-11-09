@@ -1,0 +1,55 @@
+.navigation {
+  height: 10rem;
+  width: 100%;
+  background-color: $color-white;
+  z-index: 1000;
+
+  &__logo {
+    height: 10rem;
+    width: 13rem;
+    padding: 8px;
+    margin-left: 3.5rem;
+    transition: all 0.25s;
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  &__navitem-box {
+    margin-top: 4rem;
+    float: right;
+  }
+
+  &__list {
+    text-align: center;
+  }
+
+  &__item {
+    display: inline-block;
+    // line-height: 20px;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      padding: 1rem 2rem;
+      text-decoration: none;
+      color: $color-grey-2;
+      font-size: 2rem;
+      border: 2px solid transparent;
+      // transition: all 0.1s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-tertiary;
+      border: 2px solid $color-tertiary;
+    }
+  }
+}
+
+.navigation.fixed {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+}

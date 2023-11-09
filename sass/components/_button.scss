@@ -1,0 +1,64 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    border: none;
+    text-decoration: none;
+    padding: 1.2rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+
+  &--blue {
+    color: $color-white;
+    background-color: $color-tertiary;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+      cursor: pointer;
+    }
+
+    @include respond(phone) {
+      font-size: 3rem;
+      padding: 1.5rem;
+    }
+  }
+
+  &--cta {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    background-color: $color-tertiary;
+    color: $color-white;
+
+    @include respond(tab-land-2) {
+      font-size: 2.2rem;
+      padding: 1.2rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2rem;
+      padding: 1.4rem;
+    }
+
+    &:hover {
+      background-color: $color-black;
+      color: $color-white;
+      cursor: pointer;
+    }
+  }
+
+  &--black {
+    color: $color-white;
+    background-color: $color-black;
+
+    &:hover {
+      background-color: $color-tertiary;
+      color: $color-white;
+    }
+  }
+}
