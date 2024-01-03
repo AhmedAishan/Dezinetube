@@ -233,13 +233,13 @@ body {
     width: calc( 3 * ((100% - 3 * 3rem) / 4) + 2 * 3rem); }
 
 .header {
-  height: 80vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url(../../img/blueletters_blur.jpg);
+  height: 70rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url(../../img/backgroundImg.jpg);
   background-size: cover;
   background-position: bottom; }
-  @media only screen and (max-width: 67.125em) {
+  @media only screen and (max-width: 37.5em) {
     .header {
-      height: 60vh; } }
+      height: 100rem; } }
   .header__row {
     max-width: 120rem;
     padding-top: 8rem; }
@@ -307,11 +307,17 @@ body {
     padding: 8px;
     margin-left: 3.5rem;
     transition: all 0.25s; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__logo {
+        margin-left: 0.2rem; } }
     .navigation__logo:hover {
       transform: scale(0.9); }
   .navigation__navitem-box {
     margin-top: 4rem;
     float: right; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__navitem-box {
+        margin-left: -10rem; } }
   .navigation__list {
     text-align: center; }
   .navigation__item {
@@ -322,6 +328,9 @@ body {
     color: #54595f;
     font-size: 2rem;
     border: 2px solid transparent; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__link:link, .navigation__link:visited {
+        padding: 1rem 1.2rem; } }
   .navigation__link:hover, .navigation__link:active {
     color: #2285ff;
     border: 2px solid #2285ff; }
