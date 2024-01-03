@@ -1,13 +1,12 @@
 .header {
-  height: 80vh;
+  height: 70rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
-    url(../../img/blueletters_blur.jpg);
+    url(../../img/backgroundImg.jpg);
   background-size: cover;
   background-position: bottom;
-  // padding-top: 8rem;
 
-  @include respond(tab-land-2) {
-    height: 60vh;
+  @include respond(phone) {
+    height: 100rem;
   }
 
   &__row {
