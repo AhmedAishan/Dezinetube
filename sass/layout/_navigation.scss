@@ -11,6 +11,10 @@
     margin-left: 3.5rem;
     transition: all 0.25s;
 
+    @include respond(phone) {
+      margin-left: 0.2rem;
+    }
+
     &:hover {
       transform: scale(0.9);
     }
@@ -19,6 +23,10 @@
   &__navitem-box {
     margin-top: 4rem;
     float: right;
+
+    @include respond(phone) {
+      margin-left: -10rem;
+    }
   }
 
   &__list {
@@ -38,7 +46,10 @@
       color: $color-grey-2;
       font-size: 2rem;
       border: 2px solid transparent;
-      // transition: all 0.1s;
+
+      @include respond(phone) {
+        padding: 1rem 1.2rem;
+      }
     }
 
     &:hover,
