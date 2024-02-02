@@ -1,8 +1,11 @@
 .section {
   transition: transform 1s, opacity 1s;
   background-color: $color-white;
-  margin-top: 6rem;
   padding: 5rem 0;
+
+  &:not(:last-child) {
+    padding: 10rem 0;
+  }
 }
 
 .section-about {
@@ -12,26 +15,32 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 2px;
+
+    @include respond(phone) {
+      width: 60%;
+    }
   }
 
   &__text-box {
     // margin-bottom: 10rem;
     width: 55%;
-    margin: 0 auto 3rem;
+    margin: 0 auto 8rem;
+    text-align: center;
     background-color: $color-white-2;
     padding: 2.5rem;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
-    transition: all 0.4s ease-in;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     border-radius: 4px;
 
     &:hover {
-      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.28);
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
       transform: translateY(-0.4rem) scale(1.01);
     }
   }
 
   &__para {
-    color: $color-grey-1;
+    color: $color-grey-2;
     font-size: 1.6rem;
     line-height: 2.5rem;
     font-weight: 400;
@@ -40,6 +49,10 @@
 
 .section-work {
   text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+    url(../../img/backgroundImg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 
   &__row {
     max-width: 114rem;
@@ -56,8 +69,24 @@
   }
 
   &__box {
-    border: 0.12rem solid $color-grey-4;
+    // border: 0.12rem solid $color-grey-4;
     padding: 1.5rem 1.5rem 2.5rem;
+
+    background: rgba(255, 255, 255, 0.06);
+    background-color: rgba(0, 0, 0, 0.411);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(3.4px);
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.589);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.1px);
+      -webkit-backdrop-filter: blur(6.1px);
+    }
 
     @include respond(tab-land-2) {
       width: 100% !important;
@@ -71,19 +100,24 @@
     line-height: 1.8rem;
     color: $color-grey-1;
     font-weight: 400;
+    color: $color-white-2;
   }
 
-  &__link {
+  &__link,
+  &__link:link,
+  &__link:visited {
+    display: inline-block;
     text-decoration: none;
-    color: $color-grey-2;
+    color: $color-white;
     font-size: 1.6rem;
     font-weight: 500;
-    transition: all 0.2s;
     border-bottom: 1px solid transparent;
     padding: 1rem 0 0.5rem;
+    transition: all 0.2s;
 
     &:hover {
       color: $color-tertiary;
+      transform: translateY(-3px);
       border-bottom: 1px solid $color-tertiary;
     }
   }
@@ -114,6 +148,15 @@
 }
 
 .section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.revealEl {
+  transition: transform 1s, opacity 1s, box-shadow 0.4s ease-in;
+}
+
+.revealEl--hidden {
   opacity: 0;
   transform: translateY(8rem);
 }

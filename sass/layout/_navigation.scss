@@ -3,6 +3,7 @@
   width: 100%;
   background-color: $color-white;
   z-index: 1000;
+  transition: all 0.3s;
 
   &__logo {
     height: 10rem;
@@ -58,9 +59,4 @@
       border: 2px solid $color-tertiary;
     }
   }
-}
-
-.navigation.fixed {
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.9);
 }

@@ -4,6 +4,7 @@
     url(../../img/backgroundImg.jpg);
   background-size: cover;
   background-position: bottom;
+  background-attachment: fixed;
 
   @include respond(phone) {
     height: 100rem;

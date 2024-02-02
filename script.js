@@ -15,6 +15,9 @@ const header = document.querySelector(".header");
 const allSections = document.querySelectorAll(".section");
 const imgTargets = document.querySelector("img[data-src]");
 
+//test revealEl
+const sectionsToBeRevealed = document.querySelectorAll(".revealEl");
+
 // Scroll to pages
 const homePage = document.getElementById("home");
 const aboutPage = document.getElementById("about");
@@ -41,50 +44,24 @@ navList.addEventListener("click", function (e) {
   }
 });
 
-// 2. Sticky navigation
-
-// const coords = aboutPage.getBoundingClientRect();
-// // console.log(coords);
-// window.addEventListener("scroll", function (e) {
-//   // console.log(window.scrollY);
-
-//   if (window.scrollY > coords.top) nav.classList.add("fixed");
-//   else nav.classList.remove("fixed");
-// });
-
-const stickyNav = function (entries) {
-  const [entry] = entries;
-  // console.log(entries);
-  if (!entry.isIntersecting) nav.classList.add("fixed");
-  else nav.classList.remove("fixed");
-};
-
-const headerObserver = new IntersectionObserver(stickyNav, {
-  root: null,
-  threshold: 0,
-  rootMargin: "-100px", //Making the header stop at 90%
-});
-
-headerObserver.observe(header);
-
 // Reveal sections
 const revealSections = function (entries, observer) {
   const [entry] = entries;
   // console.log(entry);
 
   if (!entry.isIntersecting) return; //Guard clause: If the entry is not intersecting, then don't execute the below code
-  entry.target.classList.remove("section--hidden"); //don forget the target(which is an attribute of 'IntersectionObserverEntry'), actually we use target element to make the section which just intersected to be visible not all section!!!
+  entry.target.classList.remove("revealEl--hidden"); //don forget the target(which is an attribute of 'IntersectionObserverEntry'), actually we use target element to make the section which just intersected to be visible not all section!!!
   observer.unobserve(entry.target); //For better performance
 };
 
 const sectionOberver = new IntersectionObserver(revealSections, {
   root: null,
-  threshold: 0.1,
+  threshold: 0.5,
 });
 
-allSections.forEach(function (section) {
+sectionsToBeRevealed.forEach(function (section) {
   sectionOberver.observe(section);
-  section.classList.add("section--hidden");
+  section.classList.add("revealEl--hidden");
 });
 
 // Lazy loading
