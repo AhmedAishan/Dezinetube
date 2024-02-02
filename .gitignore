@@ -1,3 +1,5 @@
+.vscode
+node_modules
 node_modules/.package-lock.json
 node_modules/.bin/autoprefixer
 node_modules/.bin/autoprefixer.cmd
