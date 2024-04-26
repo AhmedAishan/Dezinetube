@@ -1,10 +1,14 @@
 .header {
   height: 70rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
-    url(../../img/backgroundImg.jpg);
+    url(../img/backgroundImg.jpg);
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
+
+  @include respond(tab-port) {
+    background-attachment: scroll;
+  }
 
   @include respond(phone) {
     height: 100rem;
